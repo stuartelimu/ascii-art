@@ -17,6 +17,14 @@ print('Iterating through pixel contents')
 for x in range(len(pixel_list)):
     for y in range(len(pixel_list[x])):
         pixel = pixel_list[x][y]
-        print(pixel)
+        # print(pixel)
 
-# print(pixel_list)
+# construct brightness matrix
+brightness_matrix = [[(x[0]+x[1]+x[2])//3] for x in list(im.getdata())]
+
+# loop through brightness matrix
+print('Iterating through pixel brightness')
+for x in range(len(brightness_matrix)):
+    for y in range(len(brightness_matrix[x])):
+        pixel = brightness_matrix[x][y]
+        print(pixel)
